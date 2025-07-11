@@ -7,8 +7,8 @@ body {
 }
 
 .hero {
-  background: 
-    linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), /* soft overlay for readability */
+  background:
+    linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
     url('assets/images/wedding_background.jpeg') center/cover no-repeat;
   text-align: center;
   padding: 5rem 1rem 2rem 1rem;
