@@ -7,10 +7,7 @@ body {
 }
 
 .hero {
-  background: url('assets/images/wedding_background.jpeg') center/cover no-repeat;
-  text-align: center;
-  padding: 5rem 1rem 2rem 1rem;
-  border-bottom: 2px solid #ece2d0;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
 }
 
 
