@@ -96,21 +96,42 @@ html {
   to   { opacity: 1; }
 }
 /* Gold-boxed panels */
+/* Full-width collapsible “WGold” panels */
 .gold-box {
-  background: rgba(166,138,100,0.1);
+  background: rgba(166,138,100,0.1);      /* light WGold tint */
   border: 2px solid rgba(166,138,100,0.5);
   border-radius: 1em;
-  padding: 1.5em;
-  margin-top: 0.2em;
+  margin: 1em auto;
+  padding: 0;                              /* summary and content get their own padding */
+  overflow: hidden;
 }
 
-/* Collapsible summary styling */
-details summary {
-  font-weight: bold;
+/* Make the header fill the box */
+.gold-box summary {
+  display: block;                         /* full-width */
+  width: 100%;
+  padding: 1em 1.5em;
   font-size: 1.25rem;
-  cursor: pointer;
+  font-weight: bold;
   color: #a68a64;
+  cursor: pointer;
+  list-style: none;                       /* hide default marker */
 }
+.gold-box summary::-webkit-details-marker {
+  display: none;                          /* hide default arrow */
+}
+
+/* Content inside the same box */
+.gold-box > *:not(summary) {
+  padding: 1em 1.5em;
+  border-top: 1px solid rgba(166,138,100,0.5);
+}
+
+/* Change header color when open */
+.gold-box[open] summary {
+  color: #7c6547;
+}
+
 details[open] summary {
   color: #7c6547;
 }

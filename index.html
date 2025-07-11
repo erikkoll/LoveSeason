@@ -15,72 +15,61 @@
     <a href="#rsvp" class="cta">RSVP</a>
   </div>
 
-  <!-- Tab content sections -->
+  <!-- Collapsible Sections -->
   <section>
-    <details>
+    <details class="gold-box">
       <summary>Our Story</summary>
-      <div class="gold-box">
-        <p>From the first coffee to forever—join us as we celebrate love, laughter, and a lifetime together.</p>
-      </div>
+      <p>From the first coffee to forever—join us as we celebrate love, laughter, and a lifetime together.</p>
     </details>
   </section>
 
   <section>
-    <details>
+    <details class="gold-box">
       <summary>Schedule</summary>
-      <div class="gold-box">
-        <ul>
-          <li>16:00 – Reception at the botanical garden</li>
-          <li>16:30 – Start of the ceremony</li>
-          <li>19:00 – End of the ceremony at the gardens</li>
-          <li>19:30 – Reception dinner at the hotel</li>
-          <li>20:00 – Dinner</li>
-          <li>02:00 – End of the party</li>
-        </ul>
-      </div>
+      <ul>
+        <li>16:00 – Reception at the botanical garden</li>
+        <li>16:30 – Start of the ceremony</li>
+        <li>19:00 – End of the ceremony at the gardens</li>
+        <li>19:30 – Reception dinner at the hotel</li>
+        <li>20:00 – Dinner</li>
+        <li>02:00 – End of the party</li>
+      </ul>
     </details>
   </section>
 
   <section>
-    <details>
+    <details class="gold-box">
       <summary>Location</summary>
-      <div class="gold-box">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </details>
   </section>
 
   <section>
-    <details>
+    <details class="gold-box gallery-grid">
       <summary>Photo Gallery</summary>
-      <div class="gold-box gallery-grid">
-        <img src="assets/images/1.jpg" alt="Eric and Gabriela"/>
-        <img src="assets/images/2.jpg" alt="Engagement"/>
-        <!-- more -->
-      </div>
+      <img src="assets/images/1.jpg" alt="Eric and Gabriela"/>
+      <img src="assets/images/2.jpg" alt="Engagement"/>
+      <!-- more images -->
     </details>
   </section>
 
   <section>
-    <details>
+    <details class="gold-box">
       <summary>Registry</summary>
-      <div class="gold-box">
-        <p>Your presence is the best gift, but if you'd like to give more, see our <a href="https://www.example.com">wedding registry</a>.</p>
-      </div>
+      <p>Your presence is the best gift, but if you'd like to give more, see our <a href="https://www.example.com">wedding registry</a>.</p>
     </details>
   </section>
+
   <script>
-  const tabLinks = document.querySelectorAll('.tab-btn');
-  const sections = Array.from(tabLinks).map(a => document.querySelector(a.getAttribute('href')));
-
-  window.addEventListener('scroll', () => {
-    let idx = sections.findIndex((sec, i) =>
-      window.scrollY >= sec.offsetTop - window.innerHeight/3
-    );
-    tabLinks.forEach(a => a.classList.remove('active'));
-    if (idx >= 0) tabLinks[idx].classList.add('active');
-  });
-</script>
-
+    // Ensure only one panel is open at a time
+    document.querySelectorAll('details.gold-box').forEach(det => {
+      det.addEventListener('toggle', e => {
+        if (!e.target.open) return;
+        document.querySelectorAll('details.gold-box').forEach(other => {
+          if (other !== e.target) other.open = false;
+        });
+      });
+    });
+  </script>
 </body>
 </html>
