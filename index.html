@@ -15,16 +15,8 @@
     <a href="#rsvp" class="cta">RSVP</a>
   </div>
 
-  <!-- Tab navigation -->
-  <nav class="tabs">
-    <a class="tab-btn active" href="#story">Our Story</a>
-    <a class="tab-btn active" href="#story">Details</a>
-    <a class="tab-btn active" href="#story">Location</a>
-    <a class="tab-btn active" href="#story">Registry</a>
-  </nav>
-
   <!-- Tab content sections -->
-  <section id="story" class="tab-content active">
+  <section>
     <details>
       <summary>Our Story</summary>
       <div class="gold-box">
@@ -33,7 +25,7 @@
     </details>
   </section>
 
-  <section id="details" class="tab-content">
+  <section>
     <details>
       <summary>Schedule</summary>
       <div class="gold-box">
@@ -49,7 +41,7 @@
     </details>
   </section>
 
-  <section id="location" class="tab-content">
+  <section>
     <details>
       <summary>Location</summary>
       <div class="gold-box">
@@ -58,18 +50,18 @@
     </details>
   </section>
 
-  <section id="gallery" class="tab-content">
+  <section>
     <details>
       <summary>Photo Gallery</summary>
       <div class="gold-box gallery-grid">
-        <img src="assets/images/1.jpg" alt="Emma and Liam"/>
+        <img src="assets/images/1.jpg" alt="Eric and Gabriela"/>
         <img src="assets/images/2.jpg" alt="Engagement"/>
         <!-- more -->
       </div>
     </details>
   </section>
 
-  <section id="registry" class="tab-content">
+  <section>
     <details>
       <summary>Registry</summary>
       <div class="gold-box">
@@ -77,20 +69,6 @@
       </div>
     </details>
   </section>
-
-  <script>
-    // Tab switching
-    const tabs = document.querySelectorAll('.tab-btn');
-    const contents = document.querySelectorAll('.tab-content');
-    tabs.forEach(btn => btn.addEventListener('click', () => {
-      // activate button
-      tabs.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      // show content
-      contents.forEach(section => section.classList.remove('active'));
-      document.getElementById(btn.dataset.tab).classList.add('active');
-    }));
-  </script>
   <script>
   const tabLinks = document.querySelectorAll('.tab-btn');
   const sections = Array.from(tabLinks).map(a => document.querySelector(a.getAttribute('href')));
