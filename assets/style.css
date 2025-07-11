@@ -9,11 +9,10 @@ body {
 .hero {
   background:
     linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
-    url('assets/images/hero.jpg') center/cover no-repeat;
-  text-align: center;
-  padding: 5rem 1rem 2rem 1rem;
-  border-bottom: 2px solid #ece2d0;
+    url('images/hero.jpg') center/cover no-repeat;
+  /* … */
 }
+
 
 
 
