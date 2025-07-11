@@ -9,51 +9,88 @@
 </head>
 <body>
   <div class="hero">
-    <h1>Eric & Gabriela</h1>
+    <h1>Eric &amp; Gabriela</h1>
     <p class="date">Saturday, 16th May 2026</p>
     <p class="venue">Blanes, Spain</p>
-    <a class="cta" href="#rsvp">RSVP</a>
+    <a href="#rsvp" class="cta">RSVP</a>
   </div>
-  <section class="story">
-    <h3>Our Story</h3>
-    <p>
-      From the first coffee to forever—join us as we say "I do" and celebrate love, laughter, and a lifetime together.
-    </p>
+
+  <!-- Tab navigation -->
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="story">Our Story</button>
+    <button class="tab-btn" data-tab="details">Details</button>
+    <button class="tab-btn" data-tab="location">Location</button>
+    <button class="tab-btn" data-tab="gallery">Gallery</button>
+    <button class="tab-btn" data-tab="registry">Registry</button>
+  </nav>
+
+  <!-- Tab content sections -->
+  <section id="story" class="tab-content active">
+    <details>
+      <summary>Our Story</summary>
+      <div class="gold-box">
+        <p>From the first coffee to forever—join us as we celebrate love, laughter, and a lifetime together.</p>
+      </div>
+    </details>
   </section>
-  <section class="details">
-    <h3>Schedule</h3>
-    <ul>
-      <li>16:00 – Reception at the botanical garden</li>
-      <li>16:30 – Start of the ceremony</li>
-      <li>19:00 – End of the ceremony at the gardens</li>
-      <li>19:30 – Reception at the hotel dinner</li>
-      <li>20:00 – Dinner</li>
-      <li>02:00 – End of the party</li>
-    </ul>
+
+  <section id="details" class="tab-content">
+    <details>
+      <summary>Schedule</summary>
+      <div class="gold-box">
+        <ul>
+          <li>16:00 – Reception at the botanical garden</li>
+          <li>16:30 – Start of the ceremony</li>
+          <li>19:00 – End of the ceremony at the gardens</li>
+          <li>19:30 – Reception dinner at the hotel</li>
+          <li>20:00 – Dinner</li>
+          <li>02:00 – End of the party</li>
+        </ul>
+      </div>
+    </details>
   </section>
-  <section class="location">
-    <h3>Location</h3>
-    <p>Jardí Botànic Marimurtra, Blanes, Spain</p>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2980.02835813079!2d2.7992717121364485!3d41.67673097787747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12bb16463a7a6e17%3A0xee80ede0d7f2642b!2sJard%C3%AD%20Bot%C3%A0nic%20Marimurtra!5e0!3m2!1ses!2suk!4v1752188377486!5m2!1ses!2suk"
-      width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+  <section id="location" class="tab-content">
+    <details>
+      <summary>Location</summary>
+      <div class="gold-box">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </details>
   </section>
-  <section class="gallery">
-    <h3>Photo Gallery</h3>
-    <img src="assets/images/1.jpg" alt="Eric and Gabriela"/>
-    <img src="assets/images/2.jpg" alt="Engagement"/>
-    <!-- Add more images as needed -->
+
+  <section id="gallery" class="tab-content">
+    <details>
+      <summary>Photo Gallery</summary>
+      <div class="gold-box gallery-grid">
+        <img src="assets/images/1.jpg" alt="Emma and Liam"/>
+        <img src="assets/images/2.jpg" alt="Engagement"/>
+        <!-- more -->
+      </div>
+    </details>
   </section>
-  <section class="registry">
-    <h3>Registry</h3>
-    <p>We accept $500 bills. If you're poor, you can also see our <a href="https://www.example.com">wedding registry</a>.</p>
+
+  <section id="registry" class="tab-content">
+    <details>
+      <summary>Registry</summary>
+      <div class="gold-box">
+        <p>Your presence is the best gift, but if you'd like to give more, see our <a href="https://www.example.com">wedding registry</a>.</p>
+      </div>
+    </details>
   </section>
-  <section id="rsvp" class="rsvp">
-    <h3>RSVP</h3>
-    <p>Please let us know if you can join us by filling out the <a href="https://forms.gle/example" target="_blank">RSVP form</a> by 31st August 2025.</p>
-  </section>
-  <footer>
-    <p>With love, Eric & Gabriela</p>
-  </footer>
+
+  <script>
+    // Tab switching
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+    tabs.forEach(btn => btn.addEventListener('click', () => {
+      // activate button
+      tabs.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      // show content
+      contents.forEach(section => section.classList.remove('active'));
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    }));
+  </script>
 </body>
 </html>
