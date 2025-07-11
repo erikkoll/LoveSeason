@@ -19,26 +19,31 @@
 }
 
 /* Main title */
+/* Hero text all turned white */
+.hero h1,
+.hero .date,
+.hero .venue {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Fine-tune spacing now that the subtitle is gone */
 .hero h1 {
-  font-size: 4rem;
+  margin: 0 0 0.5em;    /* space below title */
+  font-size: 4rem;      /* keep it big! */
   letter-spacing: 0.1em;
-  margin: 0.2em 0;
-  color: #2d2d2d;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
-/* Subtitle (“Are Getting Married!”) */
-.hero h2 {
-  font-weight: 400;
-  margin: 0.5em 0 1em;
-  color: #2d2d2d;
-}
-
-/* Date & Venue lines */
-.date, .venue {
+.hero .date {
   font-size: 1.2rem;
-  margin: 0.2em 0;
-  color: #444;
+  margin: 0.5em 0 0;    /* move date down into place */
+}
+
+.hero .venue {
+  font-size: 1.2rem;
+  margin: 0.2em 0 1.5em; /* small gap below venue before button */
+}
+
 }
 
 /* RSVP button */
