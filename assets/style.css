@@ -7,11 +7,14 @@ body {
 }
 
 .hero {
-  background: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)), url('images/hero.jpg') center/cover;
+  background: 
+    linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), /* soft overlay for readability */
+    url('assets/images/wedding background.jpg') center/cover no-repeat;
   text-align: center;
   padding: 5rem 1rem 2rem 1rem;
   border-bottom: 2px solid #ece2d0;
 }
+
 
 .hero h1 {
   font-size: 3rem;
