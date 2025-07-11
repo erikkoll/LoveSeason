@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 /* —————————————————————
    Hero Section
    ————————————————————— */
@@ -93,21 +96,24 @@
 }
 
 /* Tab menu */
+/* Tabs stay pinned at top and scroll if they overflow */
 .tabs {
+  position: sticky;
+  top: 0;
+  background: #fffaf8;        /* match your body bg */
+  z-index: 100;               /* sit above content */
   display: flex;
-  justify-content: center;
-  margin: 2em 0 1em;
-  gap: 1em;
+  overflow-x: auto;           /* allow horizontal scroll */
+  white-space: nowrap;        /* keep buttons in a row */
+  padding: 0.5em 1em;         
+  margin: 0;                  /* ditch previous margins */
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 }
+
+/* Ensure each tab is sized to its content */
 .tab-btn {
-  background: transparent;
-  border: none;
-  font-size: 1rem;
-  padding: 0.5em 1em;
-  cursor: pointer;
-  position: relative;
-  color: #2d2d2d;
-  transition: color 0.2s;
+  flex: 0 0 auto;
+  margin: 0 0.5em;
 }
 .tab-btn.active,
 .tab-btn:hover {
@@ -125,13 +131,10 @@
 
 /* Tab content */
 .tab-content {
-  display: none;
   max-width: 700px;
   margin: 0 auto 2em;
 }
-.tab-content.active {
-  display: block;
-}
+
 
 /* Gold-boxed panels */
 .gold-box {

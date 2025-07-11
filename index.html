@@ -17,11 +17,10 @@
 
   <!-- Tab navigation -->
   <nav class="tabs">
-    <button class="tab-btn active" data-tab="story">Our Story</button>
-    <button class="tab-btn" data-tab="details">Details</button>
-    <button class="tab-btn" data-tab="location">Location</button>
-    <button class="tab-btn" data-tab="gallery">Gallery</button>
-    <button class="tab-btn" data-tab="registry">Registry</button>
+    <a class="tab-btn active" href="#story">Our Story</a>
+    <a class="tab-btn active" href="#story">Details</a>
+    <a class="tab-btn active" href="#story">Location</a>
+    <a class="tab-btn active" href="#story">Registry</a>
   </nav>
 
   <!-- Tab content sections -->
@@ -92,5 +91,18 @@
       document.getElementById(btn.dataset.tab).classList.add('active');
     }));
   </script>
+  <script>
+  const tabLinks = document.querySelectorAll('.tab-btn');
+  const sections = Array.from(tabLinks).map(a => document.querySelector(a.getAttribute('href')));
+
+  window.addEventListener('scroll', () => {
+    let idx = sections.findIndex((sec, i) =>
+      window.scrollY >= sec.offsetTop - window.innerHeight/3
+    );
+    tabLinks.forEach(a => a.classList.remove('active'));
+    if (idx >= 0) tabLinks[idx].classList.add('active');
+  });
+</script>
+
 </body>
 </html>
