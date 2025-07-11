@@ -12,10 +12,13 @@
 
   /* background image + overlay */
   background:
-    linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
+    /* stronger white overlay */
+    linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
     url('images/hero.jpg') center/cover no-repeat;
 
   border-bottom: 2px solid #ece2d0;
+  opacity: 0;
+  animation: fadein 1s ease-out forwards;
 }
 
 /* Main title */
@@ -36,12 +39,12 @@
 
 .hero .date {
   font-size: 1.2rem;
-  margin: 0.5em 0 0;    /* move date down into place */
+  margin: 0.3em 0 0;    /* move date down into place */
 }
 
 .hero .venue {
   font-size: 1.2rem;
-  margin: 0.2em 0 1.5em; /* small gap below venue before button */
+  margin: 0.1em 0 1em; /* small gap below venue before button */
 }
 
 }
@@ -49,20 +52,22 @@
 /* RSVP button */
 .hero .cta {
   display: inline-block;
-  margin-top: 1em;
+  margin-top: 1.5em;
   padding: 1em 2.5em;
   background: #a68a64;
-  color: #fff;
+  color: #fff !important;          /* force white text */
   text-decoration: none;
   border-radius: 2em;
   font-size: 1rem;
   font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: background 0.2s, transform 0.2s;
 }
 .hero .cta:hover {
   background: #7c6547;
-  transform: scale(1.05);
+  transform: translateY(-2px);
 }
+
 
 /* —————————————————————
    Mobile Adjustments
